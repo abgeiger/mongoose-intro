@@ -15,6 +15,29 @@ router.get('/', function (req, res) {
     });
 });
 
+router.post('/', function (req, res) {
+    // post request
+    var addGame = new Game(req.body);
+
+    addGame.save(function(errorMakingDatabaseQuery, data) {
+        if (errorMakingDatabaseQuery) {
+            console.log('error with game save', errorMakingDatabaseQuery);
+            res.sendStatus(500);
+        } else {
+            res.sendStatus(201);
+        }
+    });
+
+    // Game.find({}, function(errorMakingDatabaseQuery, data) {
+    //     if (errorMakingDatabaseQuery) {
+    //         console.log('error with game find', errorMakingDatabaseQuery);
+    //         res.sendStatus(500);
+    //     } else {
+    //         res.send(data);
+    //     }
+    // });
+});
+
 
 
 module.exports = router;
