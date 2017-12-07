@@ -1,7 +1,7 @@
 var app = angular.module('GameApp', ['ngRoute']);
 
 app.config(function($routeProvider) {
-    $routeProvider.when('/game', {
+    $routeProvider.when('/', {
         templateUrl: '/views/game.html',
         controller: 'GameController as vm'
     }).otherwise({
