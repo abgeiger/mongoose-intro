@@ -1,0 +1,38 @@
+<h1>Powers</h1>
+
+<input type="text" placeholder="Name" ng-model="vm.newGame.name">
+<input type="text" placeholder="Duration" ng-model="vm.newGame.duration">
+<input type="text" placeholder="Number of Players" ng-model="vm.newGame.numberOfPlayers">
+<input type="text" placeholder="Date Published" ng-model="vm.newGame.publishedDate">
+<button class="btn btn-primary" ng-click="vm.addNewGame(vm.newGame)">Add New Game</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Duration</th>
+            <th>Number of Players</th>
+            <th>Date Published</th>
+            <th>Votes</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="game in vm.games.list">
+            <td>
+                {{game.name}}
+            </td>
+            <td>
+                {{game.duration}}
+            </td>
+            <td>
+                {{game.numberOfPlayers}}
+            </td>
+            <td>
+                {{game.publishedDate}}
+            </td>
+            <td>
+                {{game.votes}}
+            </td>
+        </tr>
+    </tbody>
+</table>
